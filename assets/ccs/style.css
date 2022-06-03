@@ -1,0 +1,167 @@
+body {
+  margin: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows: 1fr 1.5fr 10fr 1fr;
+  grid-template-areas: 
+  "navmobil" 
+  "filters"
+  "main"
+  "footer";
+}
+
+/*Navbar*/
+
+.mob-nav {
+  grid-area: navmobil;
+  background-color:cornflowerblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1em;
+  padding-right: 1em
+}
+
+  /*Filters*/
+
+.filters {
+  grid-area: filters;
+  background-color: darkcyan;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.filters span {
+ padding: 0.5em; 
+}
+
+select {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 10em;
+  padding-right: 10em;
+  border-radius: 1em;
+}
+
+/*Main*/
+
+.main-container {
+  grid-area: main;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.mob-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: solid lightgray 1px;
+}
+
+/*Footer*/
+
+.footer {
+  grid-area: footer;
+  background-color: cadetblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+.footer i {
+  margin: 0.5em;
+}
+
+/*DESKTOP VERSION*/
+
+@media (min-width: 576px) {
+  .grid-container {
+    display: grid;
+    grid-template-areas: 
+    "d-menu filters"
+    "d-menu main"
+    "footer main";
+    grid-template-columns: 15% 10fr;
+    grid-template-rows: 10% 80% 10%;
+    column-gap: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .filters {
+    grid-area: filters;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .filters span {
+    padding: 0.5em; 
+   }
+   
+   select {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 30em;
+    padding-right: 30em;
+    border-radius: 1em
+   }
+   
+
+  .main-container {
+    grid-area: main;
+  }
+
+  .desk-menu {
+    grid-area: d-menu;
+    background-color:cornflowerblue;
+    margin: 0;
+    padding: 0;
+  }
+
+  .car-log {
+    margin: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1em;
+  }
+
+  .categories {
+    padding: 1em;
+  }
+
+  .categories li {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .footer {
+    grid-area: footer;
+  }
+
+  .mob-nav {
+    display: none;
+  }
+}
+
+/*MOBILE VERSION*/
+
+@media (max-width: 575px) {
+
+  .desk-menu {
+    display: none;
+  }
+}

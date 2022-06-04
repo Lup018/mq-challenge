@@ -11,8 +11,9 @@ body {
   "main"
   "footer";
   height: 100vh;
-  /*width: 100vw;*/
 }
+
+/*Navbar's Section*/
 
 .navbar {
   grid-area: navbar;
@@ -24,6 +25,8 @@ body {
   padding-left: 1em;
   padding-right: 1em
 }
+
+/*Filter's Section*/
 
 .filter {
   grid-area: filter;
@@ -40,6 +43,8 @@ body {
   padding-right: 6em
 }
 
+/*Main's Section*/
+
 .main {
   grid-area: main;
   display: flex;
@@ -48,16 +53,24 @@ body {
   align-content: center;
 }
 
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 2em;
+}
+
 .auto-card{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 14em;
   border: solid lightgray 1px;
 }
 
 img {
-  width: 250px;
+  width: 100%;
 }
 
 .auto-card button {
@@ -68,12 +81,13 @@ img {
   border: none;
 }
 
-/*.next-page {
+.next-page {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-}*/
+}
+
+/*Footer's Section*/
 
 .footer {
   grid-area: footer;
@@ -84,18 +98,21 @@ img {
   justify-content: center
 }
 
+/*MEDIA*/
 
 @media (min-width: 576px) {
 
   .grid-container {
       display: grid;
       grid-template-columns: 15% 1fr;
-      grid-template-rows: 10% 80% 10%;
+      grid-template-rows: 10% auto 10%;
       grid-template-areas: 
       "menu filter"
       "menu main"
       "footer main";
   }
+
+  /*Filter's Section*/
 
   .filter {
       grid-area: filter;
@@ -105,6 +122,8 @@ img {
   .filter span {
       margin: 0.5em;
   }
+
+  /*Menu's Section*/
 
   .menu { 
       grid-area: menu;
@@ -130,13 +149,6 @@ img {
   .categories strong {
      margin: 2em;
   }
-/*
-  .categories ul {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-  }*/
 
   .menu li {
       list-style: none;
@@ -150,6 +162,8 @@ img {
       padding-bottom: 0.3em;
   }
 
+  /*Main's Section*/
+
   .main {
       grid-area: main;
       display: flex;
@@ -160,18 +174,20 @@ img {
       row-gap: 2em;
   }
 
-  .next-page {
-      /*display: flex;
+  .card-container {
+      display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
       justify-content: center;
-      align-items: center;*/
   }
-  
+
 
   .footer {
       grid-area: footer;
       background-color: lightskyblue;
   }
+
+  /*Footer's Section*/
 
   .navbar {
       display: none;
